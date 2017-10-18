@@ -11,12 +11,12 @@
 * ### 竖向瀑布流
 图片列表分为固定列，每个图片或者容器的宽度相同，高度与宽度等比缩放(所以不同的比例图片高度不一样)，如下图所示：
 
-<img src="http://upload-images.jianshu.io/upload_images/3778813-bf24085a98babefc.png"/>
+![demo1.png](http://upload-images.jianshu.io/upload_images/3778813-bf24085a98babefc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 * ### 横向瀑布流：
 图片或者容器保持高度相同，每一行的显示的图片宽度之和等于页面的宽度，高度与宽度等比缩放(所以不同的比例图片宽度不一样)，但由于宽度不一定能满足刚好占满一行，所以采取了切割图片的做法， 如下图所示：
 
-<img src="http://upload-images.jianshu.io/upload_images/3778813-a817aefc27d38959.png"/>
+![demo2.png](http://upload-images.jianshu.io/upload_images/3778813-a817aefc27d38959.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## How to use
 作为瀑布流的一个尝试，并没有打包发布，组件的源码在 *./src/components/Waterfall.vue*中, 该例子只是作为一个demo，具体可以根据使用场景在此基础上做修改。
