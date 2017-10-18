@@ -44,18 +44,27 @@
         columnData: []
       }
     },
-    mounted () {
-      if (!this.row) {
-        this.itemWidth = `${100 / this.column}%`
-        this.$nextTick(() => {
-          const boxes = this.$refs.container.getElementsByClassName('column-item')
-          for (let i = 0; i < boxes.length; i++) {
-            this.setElementStyle(boxes[i], this.list[i], i)
-          }
-        })
+    watch: {
+      list(val) {
+        this.renderList()
       }
     },
+    mounted () {
+      this.renderList()
+    },
     methods: {
+      renderList() {
+        if (!this.row) {
+          this.columnData = []
+          this.itemWidth = `${100 / this.column}%`
+          this.$nextTick(() => {
+            const boxes = this.$refs.container.getElementsByClassName('column-item')
+            for (let i = 0; i < boxes.length; i++) {
+              this.setElementStyle(boxes[i], this.list[i], i)
+            }
+          })
+        }
+      },
       setElementStyle (element, img, index) {
         const w = this.$refs.container.offsetWidth / 4
         const h = ((w - 6) / img.width) * img.height + 6
@@ -91,6 +100,7 @@
       padding: 3px;
       font-size: 0;
       box-sizing: border-box;
+      transition: all .3s ease;
       img {
         max-width: 100%;
       }
@@ -103,6 +113,7 @@
         flex-grow: 1;
         font-size: 0;
         box-sizing: border-box;
+        transition: all .3s ease;
         img {
           min-height: 100%;
           min-width: 100%;
